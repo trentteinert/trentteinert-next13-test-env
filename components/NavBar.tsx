@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import Link from 'next/link';
 
 export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
   const updateBio = () => {
@@ -13,7 +13,7 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
     <div className='mr-0 ml-4 mt-4'>
       <div className='select-none flex mb-1'>
         <div className='font-bold z-20 cursor-pointer text-md leading-none h-fit'>
-          <a href='./'>trenton teinert</a>
+          <Link href='./'>trenton teinert</Link>
         </div>
         <h1
           onClick={updateMenu}
@@ -42,7 +42,7 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
             bio
           </li>
           <li className='cursor-pointer mr-4 leading-none m-auto'>
-            <a href='/cv'>cv</a>
+            <Link href='/cv'>cv</Link>
           </li>
           <li className='cursor-pointer leading-none h-fit m-auto line-through hover:text-emerald-600'>
             archive
