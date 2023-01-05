@@ -23,15 +23,15 @@ export default function SlideShow({ menu, changeMenu }: any) {
         }
       >
         <Image
-          className='opacity-1 max-h-[85vh] w-fit border cursor-pointer'
+          className='intrinsic transition-all duration-500 opacity-1 max-h-[85vh] w-fit border cursor-pointer'
           onClick={navigateSlide}
           src={`img${image}.jpg`}
           alt='/'
           width={1080}
           height={720}
           quality={80}
-          layout='intrinsic'
           loader={imageKitLoader}
+          priority
         />
       </main>
     </>

@@ -5,7 +5,7 @@ export default function imageKitLoader({ src, width, quality }: any) {
     params.push(`q-${quality}`);
   }
   const paramsString = params.join(',');
-  var urlEndpoint = 'https://ik.imagekit.io/trentteinert/Portfolio/';
+  var urlEndpoint = 'https://ik.imagekit.io/trentteinert/Portfolio/compressed/';
   if (urlEndpoint[urlEndpoint.length - 1] === '/')
     urlEndpoint = urlEndpoint.substring(0, urlEndpoint.length - 1);
   return `${urlEndpoint}/${src}?tr=${paramsString}`;
