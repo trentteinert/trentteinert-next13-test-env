@@ -7,6 +7,7 @@ import { useState } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const [bio, bioChange] = useState(false);
   const [menu, changeMenu] = useState(false);
   return (
     <>
@@ -17,11 +18,21 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <div className='absolute'>
-          <NavBar menu={menu} changeMenu={changeMenu} />
-        </div>
         <div>
-          <SlideShow menu={menu} changeMenu={changeMenu} />
+          <SlideShow
+            bio={bio}
+            bioChange={bioChange}
+            menu={menu}
+            changeMenu={changeMenu}
+          />
+        </div>
+        <div className='absolute top-0 left-0'>
+          <NavBar
+            bio={bio}
+            bioChange={bioChange}
+            menu={menu}
+            changeMenu={changeMenu}
+          />
         </div>
       </main>
     </>

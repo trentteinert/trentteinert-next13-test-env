@@ -1,9 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-export default function NavBar({ menu, changeMenu }: any) {
-  const [bio, bioChange] = useState(false);
-
+export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
   const updateBio = () => {
     bioChange(!bio);
   };
@@ -12,7 +10,7 @@ export default function NavBar({ menu, changeMenu }: any) {
     changeMenu(!menu);
   };
   return (
-    <div className='select-none relative ml-4 mt-[40px]'>
+    <div className='select-none mr-0 ml-4 mt-4'>
       <div className='flex mb-1'>
         <h1 className='z-20 cursor-pointer text-md leading-none h-fit'>
           trenton teinert
@@ -21,8 +19,8 @@ export default function NavBar({ menu, changeMenu }: any) {
           onClick={updateMenu}
           className={
             menu
-              ? 'z-20 mt-[0px] m-auto transition-all duration-500 rotate-180 cursor-pointer ml-4 text-sm leading-none'
-              : 'z-20 mt-[2px] m-auto transition-all duration-500 cursor-pointer ml-4 text-sm leading-none'
+              ? 'ml-4 mt-[2px] h-[12px] hover:scale-125 rotate-[-180deg] z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
+              : 'ml-4 mt-[2px] h-[12px] hover:scale-125 z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
           }
         >
           &#10148;
@@ -49,13 +47,13 @@ export default function NavBar({ menu, changeMenu }: any) {
         <div
           className={
             bio
-              ? 'transition-all opacity-1 w-44 text-justify mt-2'
-              : 'transition-all opacity-0 w-44 text-justify mt-0'
+              ? 'transition-all mr-4 md:mr-0 opacity-1 md:absolute text-justify mt-1 text-sm'
+              : 'transition-all mr-4 md:mr-0 opacity-0 hidden md:absolute text-justify mt-1 text-sm'
           }
         >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam sit
-          nisi vero nostrum qui cumque. Error atque ipsam quos voluptas pariatur
-          eveniet libero, ex a laudantium, temporibus, iure tempore distinctio.
+          is a artist based in Brooklyn, Nyc. his work explores the results of
+          our capitlist society in his local surrounding and how individuals
+          revolt against the way they are made to use public space.
         </div>
       </div>
     </div>
