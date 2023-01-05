@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar';
 import CvComponent from '../components/CvComponent';
 import { useState } from 'react';
 
-export default function cv() {
+export default function Cv() {
   const [bio, bioChange] = useState(false);
   const [menu, changeMenu] = useState(false);
   return (
