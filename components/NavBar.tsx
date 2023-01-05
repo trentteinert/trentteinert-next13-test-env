@@ -13,7 +13,7 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
     <div className='mr-0 ml-4 mt-4'>
       <div className='select-none flex mb-1'>
         <div className='font-bold z-20 cursor-pointer text-md leading-none h-fit'>
-          <Link href='./'>trenton teinert</Link>
+          <a onClick={updateMenu}>trenton teinert</a>
         </div>
         <h1
           onClick={updateMenu}

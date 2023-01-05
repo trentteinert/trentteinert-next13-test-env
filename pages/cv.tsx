@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import CvComponent from '../components/CvComponent';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Cv() {
@@ -23,6 +24,10 @@ export default function Cv() {
           menu={menu}
           changeMenu={changeMenu}
         />
+        <Link
+          href={'./'}
+          className='z-20 absolute opacity-0 top-[15px] ml-[10px] h-[20px] w-[130px] bg-slate-300'
+        ></Link>
       </div>
     </main>
   );
