@@ -44,7 +44,7 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
           <li className='cursor-pointer mr-4 leading-none m-auto'>
             <Link href='/cv'>cv</Link>
           </li>
-          <li className='cursor-pointer leading-none h-fit m-auto line-through hover:text-emerald-600'>
+          <li className='cursor-pointer leading-none h-fit m-auto line-through hover:text-teal-800'>
             archive
           </li>
         </ul>
