@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
+export default function NavBarCv({ bio, bioChange, menu, changeMenu }: any) {
   const updateBio = () => {
     bioChange(!bio);
   };
@@ -12,14 +12,14 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
   return (
     <div className='mr-0 ml-4 mt-4'>
       <div className='select-none font-bold z-20 cursor-pointer text-md leading-none h-fit'>
-        <a onClick={updateMenu}>trenton teinert</a>
+        <Link href='./'>trenton teinert</Link>
       </div>
       <button
         onClick={updateMenu}
         className={
           menu
-            ? 'select-none top-[13px] left-[140px] leading-none p-1 flex justify-center absolute z-20 transition-all md:duration-500 duration-200 hover:scale-125 rotate-[-90deg] md:rotate-[-180deg]'
-            : 'select-none top-[13px] left-[140px] leading-none p-1 flex justify-center absolute z-20 transition-all md:duration-500 duration-200 hover:scale-125 rotate-[90deg] md:rotate-0'
+            ? 'select-none top-[13px] left-[140px] leading-none p-1 flex justify-center absolute z-20 transition-all duration-500 rotate-[-90deg] md:rotate-[-180deg]'
+            : 'select-none top-[13px] left-[140px] leading-none p-1 flex justify-center absolute z-20 transition-all duration-500 rotate-[90deg] md:rotate-0'
         }
         // className={
         //   menu

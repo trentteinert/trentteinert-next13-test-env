@@ -22,6 +22,9 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 }
+button:hover {
+  color: rgb(145, 91, 141);
+}
 a:hover {
   color: rgb(145, 91, 141);
 }
@@ -57,6 +60,9 @@ li:hover {
     --callout-border-rgb: 108, 108, 108;
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
+  }
+  button:hover {
+    color: rgb(143, 117, 141);
   }
   a:hover {
     color: rgb(143, 117, 141);

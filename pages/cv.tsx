@@ -1,8 +1,9 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
+
 import CvComponent from '../components/CvComponent';
 import Link from 'next/link';
 import { useState } from 'react';
+import NavBarCv from '../components/NavBarCv';
 
 export default function Cv() {
   const [bio, bioChange] = useState(false);
@@ -18,16 +19,16 @@ export default function Cv() {
         />
       </div>
       <div className='absolute top-0 left-0'>
-        <NavBar
+        <NavBarCv
           bio={bio}
           bioChange={bioChange}
           menu={menu}
           changeMenu={changeMenu}
         />
-        <Link
+        {/* <Link
           href={'./'}
           className='z-20 absolute opacity-0 top-[15px] ml-[10px] h-[20px] w-[130px] bg-slate-300'
-        ></Link>
+        ></Link> */}
       </div>
     </main>
   );
