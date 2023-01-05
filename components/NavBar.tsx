@@ -10,17 +10,17 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
     changeMenu(!menu);
   };
   return (
-    <div className='select-none mr-0 ml-4 mt-4'>
-      <div className='flex mb-1'>
-        <h1 className='z-20 cursor-pointer text-md leading-none h-fit'>
-          trenton teinert
-        </h1>
+    <div className='mr-0 ml-4 mt-4'>
+      <div className='select-none flex mb-1'>
+        <div className='font-bold z-20 cursor-pointer text-md leading-none h-fit'>
+          <a href='./'>trenton teinert</a>
+        </div>
         <h1
           onClick={updateMenu}
           className={
             menu
-              ? 'ml-4 mt-[2px] h-[12px] hover:scale-125 rotate-[-180deg] z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
-              : 'ml-4 mt-[2px] h-[12px] hover:scale-125 z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
+              ? 'select-none ml-4 mt-[2px] h-[12px] hover:scale-125 rotate-[-90deg] md:rotate-[-180deg] z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
+              : 'select-none ml-4 mt-[2px] h-[12px] hover:scale-125 rotate-90 md:rotate-0 z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
           }
         >
           &#10148;
@@ -31,18 +31,22 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
           menu ? 'opacity-1 transition-all' : 'opacity-0 transition-all'
         }
       >
-        <p className='cursor-pointer mb-1 text-sm leading-none h-fit m-auto'>
-          contact@trentteinert.com
-        </p>
-        <ul className='text-sm flex w-fit'>
+        <div className='cursor-pointer select-none text-sm leading-none'>
+          <a href={'mailto:trentteinert@gmail.com'}>contact@trentteinert.com</a>
+        </div>
+        <ul className='text-sm select-none flex w-fit mt-1'>
           <li
             className='cursor-pointer mr-4 leading-none h-fit m-auto'
             onClick={updateBio}
           >
             bio
           </li>
-          <li className='cursor-pointer mr-4 leading-none h-fit m-auto'>cv</li>
-          <li className='cursor-pointer leading-none h-fit m-auto'>archive</li>
+          <li className='cursor-pointer mr-4 leading-none m-auto'>
+            <a href='/cv'>cv</a>
+          </li>
+          <li className='cursor-pointer leading-none h-fit m-auto line-through hover:text-emerald-600'>
+            archive
+          </li>
         </ul>
         <div
           className={
