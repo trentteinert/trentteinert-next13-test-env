@@ -19,7 +19,7 @@ export default function SlideShow({ bio, bioChange, menu, changeMenu }: any) {
         className={
           menu
             ? `select-none relative z-10 transition-all ${
-                bio ? 'mt-[180px] md:mt-[40px]' : 'mt-[80px] md:mt-[40px]'
+                bio ? 'mt-[180px] md:mt-[40px]' : 'mt-[90px] md:mt-[40px]'
               } ml-4 md:ml-52 pb-[60px] pr-4`
             : 'select-none relative z-10 transition-all mt-10 ml-4 pb-[60px] pr-4'
         }
