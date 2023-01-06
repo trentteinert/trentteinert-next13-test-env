@@ -14,7 +14,7 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: rgb(41, 39, 39);
-  --background-rgb: rgb(230, 230, 230);
+  --background-rgb: rgb(240, 240, 240);
 }
 button:hover {
   color: rgb(145, 91, 141);
@@ -34,7 +34,7 @@ li:hover {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: rgb(194, 194, 194);
+    --foreground-rgb: rgb(209, 209, 209);
     --background-rgb: rgb(41, 39, 39);
   }
   button:hover {
