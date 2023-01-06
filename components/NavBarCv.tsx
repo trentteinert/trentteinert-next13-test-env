@@ -11,24 +11,25 @@ export default function NavBarCv({ bio, bioChange, menu, changeMenu }: any) {
   };
   return (
     <div className='mr-0 ml-4 mt-4'>
-      <div className='select-none font-bold z-20 cursor-pointer text-md leading-none h-fit'>
-        <Link href='./'>trenton teinert</Link>
+      <div className='flex select-none z-20 cursor-pointer text-md mb-2 leading-none w-fit h-[14px]'>
+        <a className={'font-bold leading-none h-fit mr-2'} href='./'>
+          trenton teinert
+        </a>
+        <button
+          onClick={updateMenu}
+          className={
+            menu
+              ? 'text-lg select-none leading-none h-fit flex justify-center z-20 transition-all md:duration-200 duration-200 hover:scale-125 rotate-[-90deg] md:rotate-[-180deg]'
+              : 'text-lg select-none leading-none h-fit flex justify-center z-20 transition-all md:duration-200 duration-200 hover:scale-125 rotate-[90deg] md:rotate-0'
+          }
+          // className={
+          //   menu2          //     ? 'absolute select-none h-[20px] w-[20px] hover:scale-125 rotate-[-90deg] rotate-0 md:rotate-[-180deg] z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-n2ne'
+          //     : 'bg-blue-400 absolute select-none h-[12px] hover:scale-125 rotate-90 md:rotate-0 z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
+          // }
+        >
+          &#10148;
+        </button>
       </div>
-      <button
-        onClick={updateMenu}
-        className={
-          menu
-            ? 'select-none top-[13px] left-[140px] leading-none p-1 flex justify-center absolute z-20 transition-all duration-500 rotate-[-90deg] md:rotate-[-180deg]'
-            : 'select-none top-[13px] left-[140px] leading-none p-1 flex justify-center absolute z-20 transition-all duration-500 rotate-[90deg] md:rotate-0'
-        }
-        // className={
-        //   menu
-        //     ? 'absolute select-none h-[20px] w-[20px] hover:scale-125 rotate-[-90deg] rotate-0 md:rotate-[-180deg] z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
-        //     : 'bg-blue-400 absolute select-none h-[12px] hover:scale-125 rotate-90 md:rotate-0 z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
-        // }
-      >
-        &#10148;
-      </button>
       <div
         className={
           menu ? 'opacity-1 transition-all' : 'opacity-0 transition-all'

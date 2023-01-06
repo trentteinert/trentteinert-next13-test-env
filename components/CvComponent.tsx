@@ -7,9 +7,9 @@ export default function CvComponent({ bio, bioChange, menu, changeMenu }: any) {
         className={
           menu
             ? `max-w-[500px] text-justify relative z-10 transition-all ${
-                bio ? 'mt-[180px] md:mt-[40px]' : 'mt-[80px] md:mt-[40px]'
+                bio ? 'mt-[180px] md:mt-[37px]' : 'mt-[80px] md:mt-[37px]'
               } ml-4 md:ml-52 pb-[60px] mr-4`
-            : 'max-w-[500px] text-justify relative z-10 transition-all mt-10 ml-4 pb-[60px] mr-4'
+            : 'max-w-[500px] text-justify relative z-10 transition-all mt-[37px] ml-4 pb-[60px] mr-4'
         }
         // className='w-[90%] text-justify m-auto'
       >
