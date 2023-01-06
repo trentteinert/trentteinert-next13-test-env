@@ -14,13 +14,7 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: rgb(41, 39, 39);
-  --background-start-rgb: rgb(230, 230, 230);
-  --background-end-rgb: 255, 255, 255;
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+  --background-rgb: rgb(230, 230, 230);
 }
 button:hover {
   color: rgb(145, 91, 141);
@@ -41,25 +35,7 @@ li:hover {
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: rgb(194, 194, 194);
-    --background-start-rgb: rgb(41, 39, 39);
-    --background-end-rgb: 0, 0, 0;
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+    --background-rgb: rgb(41, 39, 39);
   }
   button:hover {
     color: rgb(143, 117, 141);
@@ -93,7 +69,7 @@ body {
 
 body {
   color: var(--foreground-rgb);
-  background: var(--background-start-rgb);
+  background: var(--background-rgb);
 }
 
 a {
