@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { CgArrowRightR } from 'react-icons/cg';
 
 export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
   const updateBio = () => {
@@ -20,14 +21,10 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
           className={
             menu
               ? 'text-lg select-none leading-none h-fit flex justify-center z-20 transition-all md:duration-200 duration-200 hover:scale-125 rotate-[-90deg] md:rotate-[-180deg]'
-              : 'text-lg select-none leading-none h-fit flex justify-center z-20 transition-all md:duration-200 duration-200 hover:scale-125 rotate-[90deg] md:rotate-0'
+              : 'text-lg select-none leading-none h-fit flex justify-center z-20 transition-all md:duration-200 duration-200 hover:scale-125 rotate-90 md:rotate-0'
           }
-          // className={
-          //   menu2          //     ? 'absolute select-none h-[20px] w-[20px] hover:scale-125 rotate-[-90deg] rotate-0 md:rotate-[-180deg] z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-n2ne'
-          //     : 'bg-blue-400 absolute select-none h-[12px] hover:scale-125 rotate-90 md:rotate-0 z-20 transition-all md:duration-500 duration-200 cursor-pointer text-sm leading-none'
-          // }
         >
-          &#10148;
+          <CgArrowRightR />
         </button>
       </div>
 
