@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+import BioText from './BioText';
 import { CgArrowRightR } from 'react-icons/cg';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
   const updateBio = () => {
@@ -11,57 +13,61 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
     changeMenu(!menu);
   };
   return (
-    <div className='mr-0 ml-4 mt-4'>
-      <div className='flex select-none z-20 cursor-pointer text-md mb-2 leading-none w-fit h-[14px]'>
-        <a className={'font-bold leading-none h-fit mr-2'} onClick={updateMenu}>
+    <div className='md:absolute ml-4 mt-4 w-fit'>
+      <div className='flex select-none'>
+        <div
+          onClick={updateMenu}
+          className='cursor-pointer text-md leading-none mr-4'
+        >
           trenton teinert
-        </a>
-        <button
+        </div>
+        <CgArrowRightR
           onClick={updateMenu}
           className={
             menu
-              ? 'text-lg select-none leading-none h-fit flex justify-center z-20 transition-all md:duration-200 duration-200 hover:scale-125 rotate-[-90deg] md:rotate-[-180deg]'
-              : 'text-lg select-none leading-none h-fit flex justify-center z-20 transition-all md:duration-200 duration-200 hover:scale-125 rotate-90 md:rotate-0'
+              ? 'transition-all cursor-pointer text-md leading-none rotate-[-90deg] md:rotate-[-180deg]'
+              : 'transition-all cursor-pointer text-md leading-none rotate-90 md:rotate-0'
           }
-        >
-          <CgArrowRightR />
-        </button>
+        />
       </div>
-
-      <div
-        className={
-          menu ? 'opacity-1 transition-all' : 'opacity-0 transition-all'
-        }
-      >
-        <div className='cursor-pointer select-none text-sm mt-1 leading-none'>
-          <a href={'mailto:trentteinert@gmail.com'}>contact@trentteinert.com</a>
-        </div>
-        <ul className='text-sm select-none flex w-fit mt-1'>
-          <li
-            className='cursor-pointer mr-4 leading-none h-fit m-auto'
-            onClick={updateBio}
+      <AnimatePresence>
+        {menu && (
+          <motion.div
+            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            bio
-          </li>
-          <li className='cursor-pointer mr-4 leading-none m-auto'>
-            <Link href='/cv'>cv</Link>
-          </li>
-          <li className='cursor-pointer leading-none h-fit m-auto line-through hover:text-teal-800'>
-            archive
-          </li>
-        </ul>
-        <div
-          className={
-            bio
-              ? 'transition-all mr-4 md:mr-0 opacity-1 md:absolute text-justify mt-1 text-sm'
-              : 'transition-all mr-4 md:mr-0 opacity-0 hidden md:absolute text-justify mt-1 text-sm'
-          }
-        >
-          is a artist based in Brooklyn, Nyc. his work explores the results of
-          our capitlist society in his local surrounding and how individuals
-          revolt against the way they are made to use public space.
-        </div>
-      </div>
+            <a
+              href={'mailto:trentteinert@gmail.com'}
+              className='cursor-pointer text-sm leading-none h-fit'
+            >
+              contact@trentteinert.com
+            </a>
+            <ul className='select-none text-sm leading-none flex justify-between w-28'>
+              <li className={'cursor-pointer'} onClick={updateBio}>
+                bio
+              </li>
+              <li>
+                <Link href={'./cv'}>cv</Link>
+              </li>
+              <li className='line-through hover:text-teal-800'>archive</li>
+            </ul>
+            <AnimatePresence>
+              {bio && (
+                <motion.div
+                  transition={{ duration: 0.3 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <BioText bio={bio} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

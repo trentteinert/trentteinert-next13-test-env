@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import NavBar from '../components/NavBar';
-import { Inter } from '@next/font/google';
 import SlideShow from '../components/SlideShow';
 import { useState } from 'react';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const [bio, bioChange] = useState(false);
@@ -19,15 +16,15 @@ export default function Home() {
       </Head>
       <main>
         <div>
-          <SlideShow
+          <NavBar
             bio={bio}
             bioChange={bioChange}
             menu={menu}
             changeMenu={changeMenu}
           />
         </div>
-        <div className='absolute top-0 left-0'>
-          <NavBar
+        <div>
+          <SlideShow
             bio={bio}
             bioChange={bioChange}
             menu={menu}
