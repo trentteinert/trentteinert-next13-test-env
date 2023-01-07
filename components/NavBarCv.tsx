@@ -37,7 +37,7 @@ export default function NavBarCv({ bio, bioChange, menu, changeMenu }: any) {
           >
             <a
               href={'mailto:trentteinert@gmail.com'}
-              className='cursor-pointer text-sm leading-none h-fit'
+              className='select-none cursor-pointer text-sm leading-none h-fit'
             >
               contact@trentteinert.com
             </a>
