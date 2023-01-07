@@ -61,7 +61,7 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                 >
-                  <BioText bio={bio} />
+                  <BioText />
                 </motion.div>
               )}
             </AnimatePresence>
