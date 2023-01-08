@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import NavBar from '../components/NavBar';
-import SlideShow from '../components/SlideShow';
+
 import { useState } from 'react';
 import CvComponent from '../components/CvComponent';
 import NavBarCv from '../components/NavBarCv';
@@ -27,8 +26,10 @@ export default function Cv() {
       <div
         className={
           menu
-            ? 'md:absolute h-[85vh] w-[93%] md:w-[500px] text-justify transition-all duration-300 mt-2 md:mt-10 ml-4 md:ml-60'
-            : 'md:absolute h-[85vh] w-[93%] md:w-[500px] text-justify transition-all duration-300 mt-2 md:mt-10 ml-4'
+            ? `relative max-w-[600px] text-justify transition-all ${
+                bio ? 'mt-[145px]' : 'mt-10'
+              } md:mt-1 ml-[5%] md:ml-60 mr-[5%]`
+            : `relative max-w-[600px] text-justify transition-all mt-2 md:mt-1 ml-[5%] md:ml-4 mr-[5%]`
         }
       >
         <CvComponent />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CvComponent({ bio, bioChange, menu, changeMenu }: any) {
+export default function CvComponent() {
   return (
     <main>
       <div>
