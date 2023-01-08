@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CvComponent({ bio, bioChange, menu, changeMenu }: any) {
   return (
-    <main>
+    <main className='md:max-w-[600px] text-justify'>
       <div>
         <div className='font-bold text-sm text- mb-1'>
           <p>Born 1998 / Harlingen, Tx.</p>

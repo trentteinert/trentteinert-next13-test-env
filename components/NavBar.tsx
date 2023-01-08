@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import BioText from './BioText';
 import { CgArrowRightR } from 'react-icons/cg';
-import { motion, AnimatePresence } from 'framer-motion';
 
 export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
   const updateBio = () => {
@@ -13,7 +12,7 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
     changeMenu(!menu);
   };
   return (
-    <div className='md:absolute ml-4 mt-4 w-fit'>
+    <div className='ml-4 mt-4 transition-all '>
       <div className='flex select-none'>
         <div
           onClick={updateMenu}
@@ -30,44 +29,40 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
           }
         />
       </div>
-      <AnimatePresence>
-        {menu && (
-          <motion.div
-            transition={{ duration: 0.2 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <a
-              href={'mailto:trentteinert@gmail.com'}
-              className='select-none cursor-pointer text-sm leading-none h-fit'
-            >
-              contact@trentteinert.com
-            </a>
-            <ul className='select-none text-sm leading-none flex justify-between w-28'>
-              <li className={'cursor-pointer'} onClick={updateBio}>
-                bio
-              </li>
-              <li>
-                <Link href={'./cv'}>cv</Link>
-              </li>
-              <li className='line-through hover:text-teal-800'>archive</li>
-            </ul>
-            <AnimatePresence>
-              {bio && (
-                <motion.div
-                  transition={{ duration: 0.3 }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <BioText />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+      <div
+        className={
+          menu
+            ? 'w-[96%] sm:w-96 md:w-fit mr-4 absolute opacity-1'
+            : 'w-[96%] sm:w-96 md:w-fit mr-4 absolute opacity-0'
+        }
+      >
+        <a
+          href={'mailto:trentteinert@gmail.com'}
+          className='select-none cursor-pointer text-sm leading-none h-fit'
+        >
+          contact@trentteinert.com
+        </a>
+        <ul className='select-none text-sm leading-none flex justify-between w-28'>
+          <li className={'cursor-pointer'} onClick={updateBio}>
+            bio
+          </li>
+          <li>
+            <Link href={'./cv'}>cv</Link>
+          </li>
+          <li className='line-through hover:text-teal-800'>archive</li>
+        </ul>
+
+        <div
+          className={
+            bio
+              ? 'h-20 md:h-fit mt-1 mr-4 absolute md:w-fit'
+              : 'h-20  md:h-fit mt-1 mr-4 absolute md:w-fit opacity-0'
+          }
+        >
+          <BioText />
+        </div>
+      </div>
     </div>
   );
 }

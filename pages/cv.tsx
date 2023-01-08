@@ -27,8 +27,10 @@ export default function Cv() {
       <div
         className={
           menu
-            ? 'md:absolute h-[85vh] w-[93%] md:w-[500px] text-justify transition-all duration-300 mt-2 md:mt-10 ml-4 md:ml-60'
-            : 'md:absolute h-[85vh] w-[93%] md:w-[500px] text-justify transition-all duration-300 mt-2 md:mt-10 ml-4'
+            ? `relative transition-all ${
+                bio ? 'mt-32' : 'mt-[2.7rem]'
+              } md:mt-1 ml-4  md:ml-60 mr-4`
+            : 'relative transition-all mt-1 ml-4 mr-4'
         }
       >
         <CvComponent />
