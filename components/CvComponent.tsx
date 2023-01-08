@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CvComponent() {
   return (
-    <main>
+    <main className='pb-12'>
       <div>
         <div className='font-bold text-sm text- mb-1'>
           <p>Born 1998 / Harlingen, Tx.</p>
