@@ -18,10 +18,10 @@ export default function SlideShow({ bio, menu }: any) {
       onClick={navigateSlide}
       className={
         menu
-          ? `relative transition-all ${
+          ? `cursor-pointer h-[85vh] relative transition-all ${
               bio ? 'mt-[145px]' : 'mt-10'
             } md:mt-2 ml-4 md:ml-60 mr-4`
-          : `relative transition-all mt-2 ml-4 mr-4`
+          : `cursor-pointer h-[85vh] relative transition-all mt-2 ml-4 mr-4`
       }
     >
       <AnimatePresence>
