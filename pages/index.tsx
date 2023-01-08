@@ -15,22 +15,17 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <div>
-          <NavBar
-            bio={bio}
-            bioChange={bioChange}
-            menu={menu}
-            changeMenu={changeMenu}
-          />
-        </div>
-        <div>
-          <SlideShow
-            bio={bio}
-            bioChange={bioChange}
-            menu={menu}
-            changeMenu={changeMenu}
-          />
-        </div>
+        <NavBar
+          bio={bio}
+          bioChange={bioChange}
+          menu={menu}
+          changeMenu={changeMenu}
+        />
+        <SlideShow
+          className='transition-all duration-300'
+          menu={menu}
+          bio={bio}
+        />
       </main>
     </>
   );

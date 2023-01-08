@@ -59,6 +59,9 @@ li:hover {
   padding: 0;
   margin: 0;
   -ms-overflow-style: none;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 html,

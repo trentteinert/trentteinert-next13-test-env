@@ -4,7 +4,8 @@ import imageKitLoader from './ImageLoader';
 import { useState } from 'react';
 import imageList from './ImageList';
 import { motion, AnimatePresence } from 'framer-motion';
-export default function SlideShow({ bio, bioChange, menu, changeMenu }: any) {
+
+export default function SlideShow({ menu, bio }: any) {
   const [image, setImage] = useState(10);
 
   const navigateSlide = () => {
@@ -18,8 +19,10 @@ export default function SlideShow({ bio, bioChange, menu, changeMenu }: any) {
       onClick={navigateSlide}
       className={
         menu
-          ? 'md:absolute h-[85vh] transition-all duration-300 mt-2 ml-4 md:ml-64 md:mt-10 mr-4 md:pb-12'
-          : 'md:absolute h-[85vh] transition-all duration-300 mt-2 ml-4 md:mt-10 mr-4 md:pb-12'
+          ? `relative transition-all ${
+              bio ? 'mt-32' : 'mt-12'
+            } md:mt-2 ml-4  md:ml-60 mr-4`
+          : 'relative transition-all mt-2 ml-4 mr-4'
       }
     >
       <AnimatePresence>
