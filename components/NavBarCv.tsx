@@ -31,7 +31,7 @@ export default function NavBarCv({ bio, bioChange, menu, changeMenu }: any) {
         className={
           menu
             ? 'transition-all leading-none md:w-[190px] w-[90%] absolute opacity-1 mt-0'
-            : 'transition-all leading-none md:w-[180px] w-[90%] absolute opacity-0 mt-0'
+            : 'transition-all leading-none md:w-[180px] w-[90%] absolute opacity-0 mt-0 pointer-events-none '
         }
       >
         <a
