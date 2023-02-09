@@ -5,17 +5,21 @@ import { useState } from 'react';
 import imageList from './ImageList';
 import { motion, AnimatePresence } from 'framer-motion';
 export default function SlideShow({ bio, menu }: any) {
-  const [image, setImage] = useState(10);
-
-  const navigateSlide = () => {
-    const isLastSlide = image === imageList.length;
-    const newIndex = isLastSlide ? 1 : image + 1;
-    setImage(newIndex);
+  const [image, setImage] = useState(0);
+  const slideUp = () => {
+    if (image === imageList.length - 1) {
+      setImage(0);
+    } else setImage(image + 1);
+  };
+  const slideDown = () => {
+    if (image === 0) {
+      setImage(imageList.length - 1);
+    } else setImage(image - 1);
   };
   console.log(image);
+
   return (
     <div
-      onClick={navigateSlide}
       className={
         menu
           ? `cursor-pointer h-[85vh] relative transition-all ${
@@ -26,6 +30,7 @@ export default function SlideShow({ bio, menu }: any) {
     >
       <AnimatePresence>
         <motion.div
+          className='w-fit'
           transition={{ duration: 0.2 }}
           key={image}
           initial={{
@@ -46,9 +51,9 @@ export default function SlideShow({ bio, menu }: any) {
           }}
         >
           <Image
-            className='intrinsic select-none transition-all duration-500 max-h-[85vh] w-fit border cursor-pointer'
-            onClick={navigateSlide}
-            src={`img${image}.jpg`}
+            className='select-none transition-all duration-500 max-h-[85vh] w-fit border cursor-pointer'
+            onClick={slideUp}
+            src={imageList[image].src}
             alt='/'
             width={1080}
             height={720}
@@ -56,6 +61,14 @@ export default function SlideShow({ bio, menu }: any) {
             loader={imageKitLoader}
             priority
           />
+          <ul className='flex justify-end text-xs mt-1'>
+            <li onClick={slideDown} className='select-none mr-2'>
+              prev
+            </li>
+            <li onClick={slideUp} className='select-none'>
+              next
+            </li>
+          </ul>
         </motion.div>
       </AnimatePresence>
     </div>
