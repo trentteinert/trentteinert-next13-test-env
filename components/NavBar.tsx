@@ -16,7 +16,7 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
       <div className='flex select-none'>
         <div
           onClick={updateMenu}
-          className='cursor-pointer text-md leading-none mr-4'
+          className='cursor-grab active:cursor-grabbing text-md leading-none mr-4'
         >
           trenton teinert
         </div>
@@ -24,8 +24,8 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
           onClick={updateMenu}
           className={
             menu
-              ? 'transition-all cursor-pointer text-md leading-none rotate-[-90deg] md:rotate-[-180deg]'
-              : 'transition-all cursor-pointer text-md leading-none rotate-90 md:rotate-0'
+              ? 'cursor-grab active:cursor-grabbing transition-all  text-md leading-none rotate-[-90deg] md:rotate-[-180deg]'
+              : 'cursor-grab active:cursor-grabbing  transition-all  text-md leading-none rotate-90 md:rotate-0'
           }
         />
       </div>
@@ -39,12 +39,12 @@ export default function NavBar({ bio, bioChange, menu, changeMenu }: any) {
       >
         <a
           href={'mailto:trentteinert@gmail.com'}
-          className='select-none cursor-pointer text-sm leading-none h-fit'
+          className='select-none text-sm leading-none h-fit'
         >
           contact@trentteinert.com
         </a>
         <ul className='select-none text-sm leading-none flex justify-between w-28 mt-1'>
-          <li className={'cursor-pointer'} onClick={updateBio}>
+          <li className={''} onClick={updateBio}>
             bio
           </li>
           <li>

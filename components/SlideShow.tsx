@@ -22,10 +22,10 @@ export default function SlideShow({ bio, menu }: any) {
     <div
       className={
         menu
-          ? `cursor-pointer h-[85vh] relative transition-all ${
+          ? ` h-[85vh] relative transition-all ${
               bio ? 'mt-[145px]' : 'mt-10'
             } md:mt-2 ml-4 md:ml-60 mr-4`
-          : `cursor-pointer h-[85vh] relative transition-all mt-2 ml-4 mr-4`
+          : ` h-[85vh] relative transition-all mt-2 ml-4 mr-4`
       }
     >
       <AnimatePresence>
@@ -51,7 +51,7 @@ export default function SlideShow({ bio, menu }: any) {
           }}
         >
           <Image
-            className='select-none transition-all duration-500 max-h-[85vh] w-fit border cursor-pointer'
+            className='cursor-grab active:cursor-grabbing select-none transition-all duration-500 max-h-[85vh] w-fit border '
             onClick={slideUp}
             src={imageList[image].src}
             alt='/'
